@@ -27,4 +27,4 @@ zip -r resurface.zip *
   - Create an [AWS Lambda custom destination](https://docs.webmethods.io/api/10.12.0/webmethods_api_cloud__api_gateway_user_s_guide/chapter14/#how-do-i-publish-data-to-an-aws-lambda-function-using-custom-destination): _Administration_ > _Destinations_ > _Custom destinations_
   - Enable `Transaction logging` global policy
   - Configure `Transaction logging` policy and enable `Store Request Headers`, `Store Request Payload`, `Store Response Headers` and `Store Response Payload`. Set `Log Generation Frequency` to `Always`. Select you AWS Lambda custom destination: _Policies_ > _Transaction logging_ > _Log Invocation_
-  - Make calls to an active API endpoint. Verify that data is flowing into Resurface.
+- Make calls to an active API endpoint. Verify that data is flowing into Resurface.
