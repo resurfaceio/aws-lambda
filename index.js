@@ -1,7 +1,7 @@
 // © 2016-2022 Resurface Labs Inc.
 
 const { HttpLogger, HttpMessage } = require('resurfaceio-logger');
-const { processEvent } = require('./lib/softwareag')
+const { processEvent } = require('./lib/' + process.env.EVENT_SOURCE);
 
 const RESPONSE_BODY_LIMIT = 1024 * 1024;
 let environment = {
