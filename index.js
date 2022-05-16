@@ -1,3 +1,5 @@
+// © 2016-2022 Resurface Labs Inc.
+
 const { HttpLogger, HttpMessage } = require('resurfaceio-logger');
 const { processEvent } = require('./lib/softwareag')
 
