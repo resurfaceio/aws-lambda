@@ -19,7 +19,7 @@ This creates, configures and deploys a _Lambda Function_ with its corresponding 
 
 Select the **Event Source**, and enter the **Resurface URL** and **Resurface Rules** parameters. Each corresponds to [the `EVENT_SOURCE`, `USAGE_LOGGERS_URL`, and `USAGE_LOGGERS_RULES` environment variables](#environment-variables), respectively.
 
-Take note of function name as well as its URL. Both can be found on the `Outputs` tab once CloudFormation had finished deploying the stack.
+Take note of function name as well as its URL. Both can be found on the `Outputs` tab once CloudFormation finishes the stack deployment.
 
 ### Manual set up
 
