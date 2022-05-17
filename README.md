@@ -11,11 +11,11 @@ Easily log API requests and responses to your own [system of record](https://res
 
 ### Automatic set up
 
-Click the **Launch Stack** button below to deploy all necessary resources as a _CloudFormation stack_:
+Click the **Launch Stack** button below to deploy all necessary resources as a _CloudFormation_ stack:
 
 [![Launch AWS Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home#/stacks/create/review?stackName=resurface-lambda&templateURL=https%3A%2F%2Fresurfacetemplates.s3.us-west-2.amazonaws.com%2Flambda.json)
 
-This creates, configures and deploys a _Lambda Function_ with its corresponding _CloudWatch_ log group, together with a basic _IAM_ role and policy for lambda execution.
+This creates, configures and deploys a _Lambda_ function with its corresponding _CloudWatch_ log group, together with a basic _IAM_ role and policy for lambda execution.
 
 Select the **Event Source**, and enter the **Resurface URL** and **Resurface Rules** parameters. Each corresponds to [the `EVENT_SOURCE`, `USAGE_LOGGERS_URL`, and `USAGE_LOGGERS_RULES` environment variables](#environment-variables), respectively.
 
@@ -37,20 +37,20 @@ npm install resurfaceio-logger --save
 zip -r logger-lambda.zip *
 ```
 - Create new Lambda function. Remember to enable the function URL when creating the function. Take note of this URL as well as the function's name.
-- Using the AWS console, go to the _Code_ section of your lambda function. Click _Upload from_, then _.zip file_, and select the the `lambda-logger.zip` file that you just created.
+- Using the AWS console, go to the **Code** section of your lambda function. Click **Upload from**, then **.zip file**, and select the the `lambda-logger.zip` file that you just created.
 - Add the [necessary environment variables](#environment-variables) `USAGE_LOGGERS_URL` and `EVENT_SOURCE` in accordance to your use case.
 
 ## Capturing API Calls
 
 ### Software AG webMethods API Gateway
 
-- Create a new AWS alias if it doesn't exist already by navigating to _Administration_ > _AWS Configuration_ > _Add new AWS account_ in your webMethods gateway.
-- Navigating to _Administration_ > _Destinations_ > _Custom destinations_ and create an [AWS Lambda custom destination](https://docs.webmethods.io/api/10.12.0/webmethods_api_cloud__api_gateway_user_s_guide/chapter14/#how-do-i-publish-data-to-an-aws-lambda-function-using-custom-destination).
-- Go to _Policies_ > _Global policies_ and enable the **Transaction logging** global policy.
-- Configure the **Transaction logging** policy by navigating to _Policies_ > _Transaction logging_ > _Log Invocation_. Once there,
-  - Enable `Store Request Headers`, `Store Request Payload`, `Store Response Headers`, and `Store Response Payload`.
-  - Set `Log Generation Frequency` to `Always`.
-  - Select the AWS Lambda custom destination that you just created.
+- Create a new AWS alias if it doesn't exist already by navigating to **Administration > AWS Configuration > Add new AWS account** in your webMethods gateway.
+- Navigate to **Administration > Destinations > Custom destinations** and create an [AWS Lambda custom destination](https://docs.webmethods.io/api/10.12.0/webmethods_api_cloud__api_gateway_user_s_guide/chapter14/#how-do-i-publish-data-to-an-aws-lambda-function-using-custom-destination).
+- Go to **Policies > Global policies** and enable the **Transaction logging** global policy.
+- Configure the **Transaction logging** policy by navigating to **Policies > Transaction logging > Log Invocation**. Once there,
+  - Enable **Store Request Headers**, **Store Request Payload**, **Store Response Headers**, and **Store Response Payload**.
+  - Set **Log Generation Frequency** to `Always`.
+  - Select the AWS Lambda custom destination that was just created.
 - Make calls to an active API endpoint. Verify that data flows into Resurface accordingly.
 
 ## Environment variables
