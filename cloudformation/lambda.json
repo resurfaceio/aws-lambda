@@ -10,7 +10,8 @@
         },
         "ResurfaceURL" : {
             "Type" : "String",
-            "Description" : "URL pointing to the Resurface /message capturing endpoint"
+            "Description" : "URL pointing to the Resurface /message capturing endpoint",
+            "AllowedPattern" : "https?:\\/\\/[a-zA-Z0-9\\.]+(?::[0-9]+)?\\/message"
         },
         "ResurfaceRules" : {
             "Type" : "String",
@@ -37,15 +38,15 @@
               }
           },
         "ResurfaceLambda" : {
-            "Type": "AWS::Lambda::Function",
-            "Properties": {
-                "Code": {
-                    "S3Bucket": "lambda-functions",
-                    "S3Key": "logger-lambda.zip",
-                    "S3ObjectVersion": "latest"
+            "Type" : "AWS::Lambda::Function",
+            "Properties" : {
+                "Code" : {
+                    "S3Bucket" : "resurface-lambda-functions",
+                    "S3Key" : "logger-lambda.zip",
+                    "S3ObjectVersion" : "dwJhTzrVk8Yjhz67gDmabdHXLPi42Krr"
                 },
-                "Description": "Sends API Call data to a Resurface instance. Resurface discovers and alerts on quality and security signatures in your API traffic.",
-                "Environment": {
+                "Description" : "Sends API Call data to a Resurface instance. Resurface discovers and alerts on quality and security signatures in your API traffic.",
+                "Environment" : {
                     "Variables" : {
                         "EVENT_SOURCE" : { "Ref" : "EventSource" },
                         "USAGE_LOGGERS_URL" : { "Ref" : "ResurfaceURL" },
@@ -53,9 +54,10 @@
                         "USAGE_LOGGERS_DISABLE" : false
                     }
                 },
-                "MemorySize": 1024,
-                "Role": { "Fn::GetAtt": [ "ResurfaceLambdaExecutionRole", "Arn" ] },
-                "Runtime": "nodejs16.x"
+                "MemorySize" : 1024,
+                "Role" : { "Fn::GetAtt": [ "ResurfaceLambdaExecutionRole", "Arn" ] },
+                "Runtime" : "nodejs16.x",
+                "Handler" : "index.handler"
             }
         },
         "ResurfaceLambdaURL" : {
@@ -68,12 +70,12 @@
     },
     "Outputs" : {
         "Name" : {
-            "Description" : "Name of the lambda function",
-            "Value" : { "Fn::GetAtt" : [ "ResurfaceLambda", "FunctionName" ] }
+            "Description" : "Function Name",
+            "Value" : { "Ref" : "ResurfaceLambda" }
         },
         "URL" : {
-            "Description" : "Function's URL",
-            "Value" : ""
+            "Description" : "Function URL",
+            "Value" : { "Fn::GetAtt" : [ "ResurfaceLambdaURL", "FunctionUrl" ] }
         }
     }
 }
