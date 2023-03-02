@@ -1,4 +1,4 @@
-// © 2016-2022 Resurface Labs Inc.
+// © 2016-2023 Resurface Labs Inc.
 
 const { HttpLogger, HttpMessage } = require('resurfaceio-logger');
 const { processEvent } = require('./lib/' + process.env.EVENT_SOURCE);
