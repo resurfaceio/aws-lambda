@@ -1,5 +1,8 @@
 # resurfaceio-aws-lambda
-Easily log API requests and responses to your own [system of record](https://resurface.io/).
+Easily log API requests and responses to your own <a href="https://resurface.io">security data lake</a>.
+
+[![License](https://img.shields.io/github/license/resurfaceio/aws-lambda)](https://github.com/resurfaceio/aws-lambda/blob/master/LICENSE)
+[![Contributing](https://img.shields.io/badge/contributions-welcome-green.svg)](https://github.com/resurfaceio/aws-lambda/blob/master/CONTRIBUTING.md)
 
 ## Requirements
 
