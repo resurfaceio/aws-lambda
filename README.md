@@ -4,15 +4,16 @@ Easily log API requests and responses to your own <a href="https://resurface.io"
 [![License](https://img.shields.io/github/license/resurfaceio/aws-lambda)](https://github.com/resurfaceio/aws-lambda/blob/master/LICENSE)
 [![Contributing](https://img.shields.io/badge/contributions-welcome-green.svg)](https://github.com/resurfaceio/aws-lambda/blob/master/CONTRIBUTING.md)
 
-## Requirements
+## Contents
 
-- docker
-- [Resurface](https://resurface.io/installation) (free Docker container)
-- An AWS subscription might be required in order to deploy AWS Lambda functions.
+- [Deployment](#deployment)
+- [Capturing API Calls](#capturing-api-calls)
+- [Environment Variables](#environment-variables)
+- [Protecting User Privacy](#protecting-user-privacy)
 
-## Set up
+## Deployment
 
-### Automatic set up
+### Automatic deployment
 
 Click the **Launch Stack** button below to deploy all necessary resources as a _CloudFormation_ stack:
 
@@ -24,7 +25,7 @@ Select the **Event Source**, and enter the **Resurface URL** and **Resurface Rul
 
 Take note of function name as well as its URL. Both can be found on the `Outputs` tab once CloudFormation finishes the stack deployment.
 
-### Manual set up
+### Manual deployment
 
 - Clone repo
 ```bash
@@ -56,7 +57,7 @@ zip -r logger-lambda.zip *
   - Select the AWS Lambda custom destination that was just created.
 - Make calls to an active API endpoint. Verify that data flows into Resurface accordingly.
 
-## Environment variables
+## Environment Variables
 
 This lambda function has access to five environment variables, but only two of them are required for the logger to work properly.
 
@@ -70,7 +71,6 @@ The environment variable `USAGE_LOGGERS_RULES` stores these [logging rules](#pro
 If you are working with large response payloads and don't want to log the whole thing, you can use the environment variable `USAGE_LOGGERS_LIMIT`. It stores an integer value corresponding to the number of bytes after which a response body will not be logged (by default, this upper limit is 1 MiB).
 #### ✔ The Logger can be disabled without deleting the lambda function (Optional)
 By setting the environment variable `USAGE_LOGGERS_DISABLE` to `true` the logger will be disabled and no API calls will be logged.
-
 
 ## Protecting User Privacy
 
