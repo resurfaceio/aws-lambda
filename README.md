@@ -21,7 +21,7 @@ Click the **Launch Stack** button below to deploy all necessary resources as a _
 
 This creates, configures and deploys a _Lambda_ function with its corresponding _CloudWatch_ log group, together with a basic _IAM_ role and policy for lambda execution.
 
-Select the **Event Source**, and enter the **Resurface URL** and **Resurface Rules** parameters. Each corresponds to [the `EVENT_SOURCE`, `USAGE_LOGGERS_URL`, and `USAGE_LOGGERS_RULES` environment variables](#environment-variables), respectively.
+Select the **Event Source**, and enter the **Resurface URL** and **Resurface Rules** parameters. Each corresponds to the `EVENT_SOURCE`, `USAGE_LOGGERS_URL`, and `USAGE_LOGGERS_RULES` [environment variables](#environment-variables), respectively.
 
 Take note of function name as well as its URL. Both can be found on the `Outputs` tab once CloudFormation finishes the stack deployment.
 
@@ -81,4 +81,4 @@ but logging rules are easily customized to meet the needs of any application.
 <a href="https://resurface.io/logging-rules">Logging rules documentation</a>
 
 ---
-<small>&copy; 2016-2023 <a href="https://resurface.io">Graylog, Inc.</a></small>
+<small>&copy; 2016-2024 <a href="https://resurface.io">Graylog, Inc.</a></small>
