@@ -1,5 +1,5 @@
 # aws-lambda
-Capture API calls from your API Gateway to your own <a href="https://resurface.io">security data lake</a> using AWS Lambda.
+Capture API calls from SoftwareAG webMethods API Gateway to your own <a href="https://resurface.io">security data lake</a> using AWS Lambda.
 
 [![License](https://img.shields.io/github/license/resurfaceio/aws-lambda)](https://github.com/resurfaceio/aws-lambda/blob/master/LICENSE)
 [![Contributing](https://img.shields.io/badge/contributions-welcome-green.svg)](https://github.com/resurfaceio/aws-lambda/blob/master/CONTRIBUTING.md)
