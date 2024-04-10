@@ -1,5 +1,5 @@
-# resurfaceio-aws-lambda
-Easily log API requests and responses to your own <a href="https://resurface.io">security data lake</a>.
+# aws-lambda
+Capture API calls from your API Gateway to your own <a href="https://resurface.io">security data lake</a> using AWS Lambda.
 
 [![License](https://img.shields.io/github/license/resurfaceio/aws-lambda)](https://github.com/resurfaceio/aws-lambda/blob/master/LICENSE)
 [![Contributing](https://img.shields.io/badge/contributions-welcome-green.svg)](https://github.com/resurfaceio/aws-lambda/blob/master/CONTRIBUTING.md)
@@ -17,7 +17,7 @@ Easily log API requests and responses to your own <a href="https://resurface.io"
 
 Click the **Launch Stack** button below to deploy all necessary resources as a _CloudFormation_ stack:
 
-[![Launch AWS Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home#/stacks/create/review?stackName=resurface-lambda&templateURL=https%3A%2F%2Fresurfacetemplates.s3.us-west-2.amazonaws.com%2Flambda.json)
+[![Launch AWS Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home#/stacks/create/review?stackName=apisec-lambda&templateURL=https%3A%2F%2Fapisec-cf-templates.s3.amazonaws.com%2Fcapture%2Flambda%2Flambda.json)
 
 This creates, configures and deploys a _Lambda_ function with its corresponding _CloudWatch_ log group, together with a basic _IAM_ role and policy for lambda execution.
 
